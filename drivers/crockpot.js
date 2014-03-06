@@ -19,8 +19,10 @@ var CrockPot = module.exports = function(ip) {
     self.call('lid-closed');
   });
 
-  this._syncState();
-  setInterval(this._syncState.bind(this),30000);
+  //self.call('state');
+  setInterval(function(){
+    self.call('state');
+  },30000);
 };
 
 CrockPot.prototype.init = function(config) {

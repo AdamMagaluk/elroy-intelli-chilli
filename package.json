@@ -1,11 +1,25 @@
 {
   "name": "elroy-intelli-chilli",
   "version": "0.0.0",
-  "description": "",
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
-  "license": "BSD-2-Clause"
+  "license": "BSD-2-Clause",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/AdamMagaluk/elroy-intelli-chilli.git"
+  },
+  "bugs": {
+    "url": "https://github.com/AdamMagaluk/elroy-intelli-chilli/issues"
+  },
+  "homepage": "https://github.com/AdamMagaluk/elroy-intelli-chilli",
+  "dependencies": {
+    "async": "~0.2.10",
+    "extend": "~1.2.1",
+    "intelli-chilli-client": "0.0.10",
+    "usergrid": "~0.10.7",
+    "node-hue-api": "~0.2.2"
+  }
 }
