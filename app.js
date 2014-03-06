@@ -31,10 +31,17 @@ HelloApp.prototype.init = function(elroy) {
       crockpot = device;
       elroy.expose(device);
       crockpot.call('state');
+
       crockpot.on('state',function(state){
-        console.log(state);
         logEvent(state.currentTemp, 'temperature');
       });
+
+      ['turn-on','turn-off','set-time','set-level','reset'].forEach(function(e){
+        crockpot.on(e,function(){
+         logEvent(e, 'transition');
+        });
+      });
+
     }
 
     if(device.type === 'huehub'){

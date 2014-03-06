@@ -50,16 +50,21 @@ CrockPot.prototype.turnOn = function(cb) {
   client.startCook(function(err){
     if(err)
       return cb(err);
+
+    
     self.state = 'on';
+    cb();
   });
 };
 
 CrockPot.prototype.turnOff = function(cb) {
+  var self = this;
   client.stopCook(function(err){
     if(err)
       return cb(err);
 
     self.state = 'off';
+    cb();
   });
 };
 
