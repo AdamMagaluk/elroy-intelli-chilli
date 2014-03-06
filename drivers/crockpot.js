@@ -37,7 +37,12 @@ CrockPot.prototype.init = function(config) {
     .map('reset', this.reset)
     .map('state', this.state)
     .map('lid-opened', this.lidOpened)
-    .map('lid-closed', this.lidClosed);
+    .map('lid-closed', this.lidClosed)
+    .stream('value', this.streamTemp);
+};
+
+CrockPot.prototype.streamTemp = function(emitter) {
+  this.tempEmitter = emitter;
 };
 
 CrockPot.prototype.turnOn = function(cb) {
@@ -109,6 +114,9 @@ CrockPot.prototype._syncState = function(cb) {
     }else {
       self.state = 'off';
     }
+    
+    if(self.tempEmitter)
+      self.tempEmitter.emit('data', self.data.currentTemp);
 
     if(cb)
       cb(null,state);
