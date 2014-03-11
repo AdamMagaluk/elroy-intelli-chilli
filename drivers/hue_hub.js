@@ -39,6 +39,8 @@ HueHubDriver.prototype.register = function(cb) {
 HueHubDriver.prototype.blink = function(cb) {
   console.log('blinking all hue bulbs');
 
+  var prevState = this.state;
+  this.state = "blinking";
   var self = this;
   function blink(group){  
     return function(callback){
@@ -58,6 +60,8 @@ HueHubDriver.prototype.blink = function(cb) {
       blink(0),
       delay(500),
       blink(0),
-  ],cb);
+  ],function(){
+    self.state = prevState;
+  });
 
 };
