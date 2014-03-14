@@ -18,8 +18,8 @@ var CrockPot = module.exports = function(ip) {
   client.on('lidclosed',function(){
     self.call('lid-closed');
   });
-
-  //self.call('state');
+  
+  self.call('state');
   setInterval(function(){
     self.call('state');
   },30000);

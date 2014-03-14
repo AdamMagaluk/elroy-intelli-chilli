@@ -1,34 +1,23 @@
-var HelloApp = module.exports = function() {
-  this.name = 'hello';
+var IntelliChili = module.exports = function() {
+  this.name = 'intellichili';
 };
 
-HelloApp.prototype.init = function(elroy) {
+IntelliChili.prototype.init = function(elroy) {
 
-  var crockpot = null;
-  var huehub = null;
+  elroy.observe('type="crockpot"').subscribe(function(err,crockpot){
+    elroy.expose(crockpot);
 
-  var self = this;
-  elroy.on('deviceready',function(device){
-    if(device.type === 'crockpot'){
-      crockpot = device;
-      elroy.expose(device);
-    }
-
-    if(device.type === 'huehub'){
-      huehub = device;
-      elroy.expose(device);
-    }
-
-    if(huehub && crockpot){
-      crockpot.on('lid-opened',function(){
-        huehub.call('blink');
+    elroy.observe('type="huehub"').subscribe(function(err,hub){
+      crockpot.on('lid-closed',function(){
+        hub.call('blink');
       });
 
       crockpot.on('lid-closed',function(){
-        huehub.call('blink');
-      });      
-    }
+        hub.call('blink');
+      });
+    });
 
   });
+
 };
 
