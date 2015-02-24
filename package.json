@@ -18,8 +18,6 @@
   "dependencies": {
     "async": "~0.2.10",
     "extend": "~1.2.1",
-    "intelli-chilli-client": "0.0.10",
-    "usergrid": "~0.10.7",
-    "node-hue-api": "~0.2.2"
+    "intelli-chilli-client": "0.0.10"
   }
 }

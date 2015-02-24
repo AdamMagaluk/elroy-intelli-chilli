@@ -2,7 +2,7 @@ var EventEmitter = require('events').EventEmitter;
 var mdns = require('mdns');
 var util = require('util');
 
-var CrockPotDriver = require('../drivers/crockpot');
+var CrockPotDriver = require('./crockpot');
 
 var MDNSScout = module.exports = function() {
  EventEmitter.call(this); 
