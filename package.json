@@ -1,7 +1,7 @@
 {
-  "name": "elroy-intelli-chilli",
+  "name": "zetta-intelli-chilli-driver",
   "version": "0.0.0",
-  "main": "app.js",
+  "main": "mdns_scout.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
