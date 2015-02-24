@@ -1,6 +1,6 @@
 {
   "name": "zetta-intelli-chilli-driver",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "main": "mdns_scout.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -16,8 +16,9 @@
   },
   "homepage": "https://github.com/AdamMagaluk/elroy-intelli-chilli",
   "dependencies": {
-    "async": "~0.2.10",
-    "extend": "~1.2.1",
-    "intelli-chilli-client": "0.0.10"
+    "intelli-chilli-client": "0.0.10",
+    "mdns": "^2.2.8",
+    "zetta-device": "^0.9.0",
+    "zetta-scout": "^0.5.0"
   }
 }
